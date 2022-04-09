@@ -1,7 +1,7 @@
 <div metal:use-macro="load: ../shared/_layout.pt">
   <div metal:fill-slot="content" tal:omit-tag="True">
 
-    <h1>Welcome ${username}</h1>
+    <h1>Welcome ${user_id}</h1>
     Here are the locations that you currently use:
     <ul tal:repeat="c cities">
       <li>${c.title} Average Max Temp: ${'{:.2f}'.format(c.max_temp_avg)}</li>

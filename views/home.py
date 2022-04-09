@@ -1,20 +1,15 @@
 import fastapi
 from fastapi_chameleon import template
-
+from starlette.requests import Request
+from viewmodels.home.indexviewmodel import IndexViewModel
+from viewmodels.shared.viewmodel import ViewModelBase
 router = fastapi.APIRouter()
 
 @router.get('/')
 @template()
-def index(user: str = 'anonymous'):
-  return {
-    'username': user,
-    'cities': [
-      {'title':'Salt Lake City', 'max_temp_avg': 8.70},
-      {'title':'Boise', 'max_temp_avg': 23.40},
-      {'title':'Los Angeles', 'max_temp_avg': 8.09}
-
-    ]
-  }
+def index(request: Request):
+  vm = IndexViewModel(request)
+  return vm.to_dict()
 
 @router.get('/about')
 @template()

@@ -7,7 +7,7 @@ router = fastapi.APIRouter()
 @template()
 def account(user: str = 'anonymous'):
   return {
-    'username': user
+    'user_id': user
   }
 
 @router.get('/account/login')
