@@ -13,5 +13,6 @@ def index(request: Request):
 
 @router.get('/about')
 @template()
-def about():
-  return {}
+def about(request: Request):
+  vm = ViewModelBase(request)
+  return vm.to_dict()
