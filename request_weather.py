@@ -1,8 +1,5 @@
 import asyncio
-import sys
 import aiohttp
-import json
-import timeit
 
 loop = asyncio.get_event_loop()
 locations = ['2487610', '2442047', '2366355']
