@@ -17,6 +17,16 @@
       <a href="/about" class="nav-link">
         <i class="bi bi-info-circle"></i> About
       </a>
+      <a tal:condition="not is_logged_in" class="nav-link" href="/account/login">
+        <i class="bi bi-door-open"></i> Sign In
+      </a>
+      <a tal:condition="not is_logged_in" class="nav-link" href="/account/register">
+        <i class="bi bi-pen"></i> Register
+      </a>
+      <a tal:condition="is_logged_in" class="nav-link" href="/account">
+        <i class="bi bi-person-badge"></i> Profile
+      </a>
+
   </nav>
 
   <!-- Main Content - FastAPI app content gets placed here-->
