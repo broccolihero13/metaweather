@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MetaWeather Personalizer</title>
+  <!-- BootStrap CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="/static/css/site.css">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+      <a href="/" class="nav-link active">
+        Home
+      </a>
+      <a href="/about" class="nav-link">
+        About
+      </a>
+  </nav>
+
+  <!-- Main Content - FastAPI app content gets placed here-->
+  <div class="main-content m-5 p-5">
+    <div metal:define-slot="content" tal:omit-tag="True">No Content</div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer mt-auto py-3 bg-dark">
+    <p class="text-center text-muted">
+      MetaWeather Personalizer is an app that allows the user to display the average max temperature over a 7 day forecast.
+    </p>
+    <ul class="nav border-top pt-3 mt-3 justify-content-center">
+      <li class="nav-item">
+        <a href="https://github.com/broccolihero13" class="nav-link"><i class="bi bi-github"></i></a>
+      </li>
+      <li class="nav-item">
+        <a href="https://www.linkedin.com/in/brock-halladay/" class="nav-link"><i class="bi bi-linkedin"></i></a>
+      </li>
+    </ul>
+    <p class="text-center text-muted">
+      &#169; Brock Halladay 
+    </p>
+  </footer>
+
+</body>
+</html>

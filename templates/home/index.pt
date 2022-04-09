@@ -1,0 +1,12 @@
+<div metal:use-macro="load: ../shared/_layout.pt">
+  <div metal:fill-slot="content" tal:omit-tag="True">
+
+    <h1>Welcome ${username}</h1>
+    Here are the locations that you currently use:
+    <ul>
+      <li>Salt Lake City Average Max Temp: 8.70</li>
+      <li>Los Angeles Average Max Temp: 23.40</li>
+      <li>Boise Average Max Temp: 8.09</li>
+    </ul>
+  </div>
+</div>

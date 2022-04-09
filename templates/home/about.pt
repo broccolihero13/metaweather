@@ -1,0 +1,9 @@
+<div metal:use-macro="load: ../shared/_layout.pt">
+  <div metal:fill-slot="content" tal:omit-tag="True">
+
+    <h1>About</h1>
+    <p>
+      MetaWeather Personalizer is an app that allows the user to display the average max temperature over a 7 day forecast. 
+    </p>
+  </div>
+</div>
