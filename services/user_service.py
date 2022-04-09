@@ -1,2 +1,2 @@
 def user() -> str:
-  return 'Casey'
+  return None

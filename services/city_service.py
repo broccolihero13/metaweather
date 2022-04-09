@@ -27,11 +27,5 @@ async def get_weather_data(locations = global_locations):
     data.append(i)
   return data
 
-async def cities(limit:int=10) -> List:
-  weather_data = await get_weather_data()
-  print(weather_data)
-  return [
-      {'title':'Salt Lake City', 'max_temp_avg': 8.70},
-      {'title':'Boise', 'max_temp_avg': 23.40},
-      {'title':'Los Angeles', 'max_temp_avg': 8.09}
-    ][:limit]
+def cities(limit:int=10) -> List:
+  return get_weather_data()

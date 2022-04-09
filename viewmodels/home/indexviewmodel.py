@@ -4,6 +4,9 @@ from typing import List
 from viewmodels.shared.viewmodel import ViewModelBase
 
 class IndexViewModel(ViewModelBase):
-  async def __init__(self, request: Request):
+  def __init__(self, request: Request):
     super().__init__(request)
-    self.cities: List = await city_service.cities(limit=10)
+    self.cities: List = []
+
+  async def set_cities(self):
+    self.cities = await city_service.cities(limit=10)
