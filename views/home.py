@@ -7,7 +7,13 @@ router = fastapi.APIRouter()
 @template()
 def index(user: str = 'anonymous'):
   return {
-    'username': user
+    'username': user,
+    'cities': [
+      {'title':'Salt Lake City', 'max_temp_avg': 8.70},
+      {'title':'Boise', 'max_temp_avg': 23.40},
+      {'title':'Los Angeles', 'max_temp_avg': 8.09}
+
+    ]
   }
 
 @router.get('/about')

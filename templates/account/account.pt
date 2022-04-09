@@ -1,0 +1,11 @@
+<div metal:use-macro="load: ../shared/_layout.pt">
+  <div metal:fill-slot="content" tal:omit-tag="True">
+
+    <h1>${username}</h1>
+    <ul>
+      <li>Name: TBD</li>
+      <li>Email: TBD</li>
+      <li>Cities: TBD</li>
+    </ul>
+  </div>
+</div>
