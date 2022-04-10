@@ -17,7 +17,7 @@
       <a href="/about" class="nav-link">
         <i class="bi bi-info-circle"></i> About
       </a>
-      <a tal:condition="not is_logged_in" class="nav-link" href="/account/login">
+      <!-- <a tal:condition="not is_logged_in" class="nav-link" href="/account/login">
         <i class="bi bi-door-open"></i> Sign In
       </a>
       <a tal:condition="not is_logged_in" class="nav-link" href="/account/register">
@@ -25,7 +25,7 @@
       </a>
       <a tal:condition="is_logged_in" class="nav-link" href="/account">
         <i class="bi bi-person-badge"></i> Profile
-      </a>
+      </a> -->
 
   </nav>
 

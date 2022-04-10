@@ -18,7 +18,7 @@ def configure():
 def configure_routes():
   app.mount('/static', StaticFiles(directory='static'))
   app.include_router(home.router)
-  app.include_router(account.router)
+  # app.include_router(account.router)
 
 if __name__ == '__main__':
   main()
