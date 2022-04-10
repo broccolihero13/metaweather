@@ -11,9 +11,11 @@ async def gather_task(loc, q: asyncio.Queue):
       # check if response was successful
       if response.status == 200:
         j = await response.json()
+        cw = j['consolidated_weather']
 
-        loc_average = sum(day['max_temp'] for day in j['consolidated_weather']) / len(j['consolidated_weather'])
-        await q.put({'title': j['title'], 'avg': loc_average})
+        most_common = max(set([abr['weather_state_abbr'] for abr in cw]), key=cw.count)
+        loc_average = sum(day['max_temp'] for day in cw) / len(cw)
+        await q.put({'title': j['title'], 'avg': loc_average, 'common_occ': most_common})
       else:
         return f"Error: {response.status} - `{loc}` ID is invalid"
 

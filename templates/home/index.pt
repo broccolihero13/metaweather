@@ -1,7 +1,17 @@
 <div metal:use-macro="load: ../shared/_layout.pt">
   <div metal:fill-slot="content" tal:omit-tag="True">
-    <ul tal:repeat="c cities">
-      <li>${c.title} Average Max Temp: ${'{:.2f}'.format(c.avg)}</li>
-    </ul>
+    <div class="container">
+      <div class="row">
+        <tal:loop repeat="c cities">
+            <div class="card weather-card" style="width: 20rem;">
+              <img src="https://www.metaweather.com/static/img/weather/${c.common_occ}.svg" class="card-img-top" alt="most common weather condition for ${c.title}">
+              <div class="card-body">
+                <h5 class="card-title">${c.title}</h5>
+                <p class="card-text">Average Max Temp: ${'{:.2f}'.format(c.avg)}</p>
+              </div>
+            </div>
+        </tal:loop>
+      </div>
+    </div>
   </div>
 </div>

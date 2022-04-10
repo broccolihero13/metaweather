@@ -14,9 +14,11 @@ async def gather_task(loc, q: asyncio.Queue):
       # check if response was successful
       if response.status == 200:
         j = await response.json()
+        cw = j['consolidated_weather']
 
-        loc_average = sum(day['max_temp'] for day in j['consolidated_weather']) / len(j['consolidated_weather'])
-        await q.put({'title': j['title'], 'avg': loc_average})
+        most_common = set([abr['weather_state_abbr'] for abr in cw])
+        loc_average = sum(day['max_temp'] for day in cw) / len(cw)
+        await q.put({'title': j['title'], 'avg': loc_average, 'common_occ': most_common})
       else:
         return f"Error: {response.status} - `{loc}` ID is invalid"
 
@@ -35,7 +37,7 @@ async def main():
   # set task for each request to run concurrently
   data = await get_weather_data()
   for i in data:
-    print(f"{i['title']} Average Max Temp: {'{:.2f}'.format(i['avg'])}")
+    print(f"{i['title']} Average Max Temp: {'{:.2f}'.format(i['avg'])}, most common forecast {i['common_occ']}")
 
 if __name__ == '__main__':
   start = timeit.default_timer()

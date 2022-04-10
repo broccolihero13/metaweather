@@ -7,3 +7,25 @@ footer  {
 .navbar {
   padding-left: 5rem !important;
 }
+
+.weather-card {
+  margin: 0px 10px 0px 10px;
+  background-color: aqua;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.weather-card .card-body {
+  background-color: green;
+  color: wheat;
+  width: 100%;
+}
+
+.card-img-top {
+  width: 200px;
+  margin: auto;
+}
+
+.card {
+  flex: 1;
+}

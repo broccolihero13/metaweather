@@ -9,4 +9,4 @@ class IndexViewModel(ViewModelBase):
     self.cities: List = []
 
   async def set_cities(self):
-    self.cities = await city_service.cities(limit=10)
+    self.cities = sorted(await city_service.cities(limit=10), key=lambda c: c['title'])
