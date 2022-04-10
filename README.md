@@ -6,3 +6,7 @@ Anyonymous users will get the average max temperature of Salt Lake City, Los Ang
 2. Run `. venv/bin/activate` to activate your virtual environment
 3. Run `pip3 install -r requirements.txt` to get the dependencies required for this application
 4. Run `uvicorn main:app` to run the application locally
+
+# Upcoming features
+* Started the basic pieces for getting a user account structure to allow sign in and register
+* Calls are made asynchronously but the page waits to load, would like to have the element state that things are loading until requests are completed

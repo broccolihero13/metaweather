@@ -4,3 +4,4 @@ aiohttp
 aiofiles
 fastapi-chameleon
 pytest
+gunicorn

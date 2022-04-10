@@ -29,5 +29,5 @@ async def get_weather_data(locations = global_locations):
     data.append(i)
   return data
 
-def cities(limit:int=10) -> List:
+def cities(limit:int=3) -> List:
   return get_weather_data()
