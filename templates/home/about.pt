@@ -3,7 +3,11 @@
 
     <h1>About</h1>
     <p>
-      MetaWeather Personalizer is an app that allows the user to display the average max temperature over a 6 day forecast. 
+      MetaWeather Personalizer is an app that allows the user to display the average max temperature over a 6 day forecast. It's a simple app currently displaying three cities: Boise, Salt Lake City, and Los Angeles.
+
+      The calls are made asynchronously to the <a href="https://www.metaweather.com/api/">MetaWeather API</a> and pull the 6 day forecast to calculate the average temperature and select an image based on the most common state of the weather over that forecast.
+
+      Check back soon for updates that include personalizing which 3 cities are displayed when you've registered/logged in and selected those preferences.
     </p>
   </div>
 </div>
