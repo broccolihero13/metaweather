@@ -17,3 +17,6 @@ Visit https://lit-earth-11903.herokuapp.com/
 * Started the basic pieces for getting a user account structure to allow sign in and register
 * Calls are made asynchronously but the page waits to load, would like to have the element state that things are loading until requests are completed
 * Would love to add search functionality to find and select from a list of option
+
+# Testing the application
+The tests are located in the `/tests` folder and the testing config file is `pytest.ini` which should all run by using `pytest`

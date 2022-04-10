@@ -37,7 +37,7 @@
   <!-- Footer -->
   <footer class="footer mt-auto py-3 bg-dark">
     <p class="text-center text-muted">
-      MetaWeather Personalizer is an app that allows the user to display the average max temperature over a 7 day forecast.
+      MetaWeather Personalizer is an app that allows the user to display the average max temperature over a 6 day forecast.
     </p>
     <ul class="nav border-top pt-3 mt-3 justify-content-center">
       <li class="nav-item">
