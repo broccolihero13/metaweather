@@ -7,11 +7,43 @@
               <img src="https://www.metaweather.com/static/img/weather/${c.common_occ}.svg" class="card-img-top" alt="most common weather condition for ${c.title}">
               <div class="card-body">
                 <h5 class="card-title">${c.title}</h5>
-                <p class="card-text">Average Max Temp: ${'{:.2f}'.format(c.avg)}</p>
+                <p class="card-text">Average Max Temp: <span class="celsius"> ${'{:.2f}'.format(c.avg)} &deg;C</span> <span class="farenheit">${'{:.2f}'.format((c.avg*9/5)+32)}&deg;F</span></p>
               </div>
             </div>
         </tal:loop>
       </div>
+      <div class="row d-flex justify-content-center mt-2">
+        <label class="switch">
+          <input type="checkbox" id="degrees" onclick="toggleDegrees()" checked>
+          <span class="slider"></span>
+        </label>
+        <div class="d-flex justify-content-center" id="measurement">Farenheit</div>
+      </div>
     </div>
   </div>
 </div>
+
+<script>
+  function toggleDegrees() {
+    var box = document.getElementById("degrees")
+    var m = document.getElementById("measurement")
+    var f = document.getElementsByClassName("farenheit");
+    var c = document.getElementsByClassName("celsius");
+
+    if(box.checked == true){
+      for (var i = 0; i < f.length; i++) {
+        f[i].style.display = 'inline';
+        c[i].style.display = 'none';
+      } 
+      m.textContent = 'Farenheit'
+    } else {
+        for (var i = 0; i < f.length; i++) {
+          f[i].style.display = 'none';
+          c[i].style.display = 'inline';
+        }
+        m.textContent = "Celsius"
+      }
+    }
+  
+  toggleDegrees();
+</script>
