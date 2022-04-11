@@ -8,9 +8,6 @@
       <p>
         The calls are made asynchronously using threading to the <a href="https://www.metaweather.com/api/">MetaWeather API</a> and pull the 6 day forecast to calculate the average temperature and select an image based on the most common state of the weather over that forecast.
       </p>
-      <p>
-        Check back soon for updates that include personalizing which 3 cities are displayed when you've registered/logged in and selected those preferences.
-      </p>
       <h3>Threading vs Asyncio</h3>
       <p>
         My understanding when I started this project was that concurrency was achieved either through threading or async/await functionality to avoid the service waiting around. While this is true it's only scratching the surface. In researching further, it's true that "threading" doesn't use multiple cores on the processor. So I decided to utilize AsyncIO for the web app as it was a more comfortable process and build a separate service for testing purposes only at this time that utilized "threading".

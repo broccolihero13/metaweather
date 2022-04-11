@@ -35,7 +35,7 @@
   </div>
 
   <!-- Footer -->
-  <footer class="footer mt-auto py-3 bg-dark">
+  <footer class="footer mt-auto bg-dark">
     <ul class="nav mt-3 justify-content-center">
       <li class="nav-item">
         <a href="https://github.com/broccolihero13" class="nav-link"><i class="bi bi-github"></i></a>
