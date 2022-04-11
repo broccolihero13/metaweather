@@ -2,6 +2,7 @@ from typing import List
 import asyncio
 import aiohttp
 
+
 async def gather_task(url, q: asyncio.Queue):
   # set async client session to gather json from the web for each location
   async with aiohttp.ClientSession() as session:

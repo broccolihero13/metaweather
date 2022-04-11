@@ -8,5 +8,7 @@ class IndexViewModel(ViewModelBase):
     super().__init__(request)
     self.cities: List = []
 
-  async def set_cities(self):
-    self.cities = sorted(await city_service.cities(limit=3), key=lambda c: c['title'])
+  def set_cities(self):
+    print("cities:")
+    print(self.cities)
+    self.cities = sorted(city_service.cities(), key=lambda c: c['title'])

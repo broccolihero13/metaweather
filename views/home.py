@@ -9,7 +9,7 @@ router = fastapi.APIRouter()
 @template()
 async def index(request: Request):
   vm = IndexViewModel(request)
-  await vm.set_cities()
+  vm.set_cities()
   return vm.to_dict()
 
 @router.get('/about')

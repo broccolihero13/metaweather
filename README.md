@@ -20,3 +20,12 @@ Visit https://lit-earth-11903.herokuapp.com/
 
 # Testing the application
 The tests are located in the `/tests` folder and the testing config file is `pytest.ini` which should all run by using `pytest`
+
+# Threading vs Asyncio
+My understanding when I started this project was that concurrency was achieved either through threading or async/await functionality to avoid the service waiting around. While this is true it's only scratching the surface. In researching further, it's true that "threading" doesn't use multiple cores on the processor (see quote below). So I decided to utilize AsyncIO for the web app as it was a more comfortable process and build a separate service for testing purposes only at this time that utilized "threading".
+
+By the end of the project, I found threading to be a bit faster (probably due to the way I implemented asyncio) so I set the city_service.py to utilize threading rather than asyncio.
+
+"Now let’s talk about the simultaneous part of that definition. You have to be a little careful because, when you get down to the details, only multiprocessing actually runs these trains of thought at literally the same time. **Threading and asyncio both run on a single processor and therefore only run one at a time.** They just cleverly find ways to take turns to speed up the overall process. Even though they don’t run different trains of thought simultaneously, we still call this concurrency." - Jim Anderson
+
+Anderson, J. (n.d.). Speed Up Your Python Program With Concurrency. Retrieved April 09, 2022, from https://realpython.com/python-concurrency 
