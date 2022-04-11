@@ -51,5 +51,4 @@ def test_threading_speed():
 #     _ = await gather_task(alt_locations)
 #     stop = timeit.default_timer()
 #     time = stop - start
-#     print(time)
 #     assert time <= 4

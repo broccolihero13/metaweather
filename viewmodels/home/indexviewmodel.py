@@ -9,6 +9,4 @@ class IndexViewModel(ViewModelBase):
     self.cities: List = []
 
   def set_cities(self):
-    print("cities:")
-    print(self.cities)
     self.cities = sorted(city_service.cities(), key=lambda c: c['title'])

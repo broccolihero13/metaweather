@@ -1,15 +1,24 @@
 <div metal:use-macro="load: ../shared/_layout.pt">
   <div metal:fill-slot="content" tal:omit-tag="True">
+    <div id="about_main">
+      <h1>About</h1>
+      <p>
+        MetaWeather Personalizer is an app that allows the user to display the average max temperature over a 6 day forecast. It's a simple app currently displaying three cities: Boise, Salt Lake City, and Los Angeles.
+      </p>
+      <p>
+        The calls are made asynchronously using threading to the <a href="https://www.metaweather.com/api/">MetaWeather API</a> and pull the 6 day forecast to calculate the average temperature and select an image based on the most common state of the weather over that forecast.
+      </p>
+      <p>
+        Check back soon for updates that include personalizing which 3 cities are displayed when you've registered/logged in and selected those preferences.
+      </p>
+      <h3>Threading vs Asyncio</h3>
+      <p>
+        My understanding when I started this project was that concurrency was achieved either through threading or async/await functionality to avoid the service waiting around. While this is true it's only scratching the surface. In researching further, it's true that "threading" doesn't use multiple cores on the processor. So I decided to utilize AsyncIO for the web app as it was a more comfortable process and build a separate service for testing purposes only at this time that utilized "threading".
+      </p>
+      <p>
+        By the end of the project, I found threading to be a bit faster (probably due to the way I implemented asyncio) so I set the city_service.py to utilize threading rather than asyncio.
+      </p>
 
-    <h1>About</h1>
-    <p>
-      MetaWeather Personalizer is an app that allows the user to display the average max temperature over a 6 day forecast. It's a simple app currently displaying three cities: Boise, Salt Lake City, and Los Angeles.
-    </p>
-    <p>
-      The calls are made asynchronously to the <a href="https://www.metaweather.com/api/">MetaWeather API</a> and pull the 6 day forecast to calculate the average temperature and select an image based on the most common state of the weather over that forecast.
-    </p>
-    <p>
-      Check back soon for updates that include personalizing which 3 cities are displayed when you've registered/logged in and selected those preferences.
-    </p>
+    </div>
   </div>
 </div>
